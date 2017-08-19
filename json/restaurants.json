@@ -1,0 +1,91 @@
+[{
+    "restaurantName": "Le Bouchon Bordelais",
+    "address": "2 rue Courbin, 33000 Bordeaux",
+    "lat": 44.841819,
+    "long": -0.57302,
+    "ratings": [{
+        "stars": 4,
+        "comment": "Un excellent restaurant, j'y reviendrai ! Par contre il vaut mieux aimer la viande."
+    }, {
+        "stars": 5,
+        "comment": "Tout simplement mon restaurant préféré !"
+    }, {
+        "stars": 3,
+        "comment": "Bien"
+    }, {
+        "stars": 3,
+        "comment": "Bien"
+    }]
+}, {
+    "restaurantName": "Le Davoli",
+    "address": "13 Rue des Bahutiers, 33000 Bordeaux",
+    "lat": 44.839373,
+    "long": -0.570772,
+    "ratings": [{
+        "stars": 5,
+        "comment": "Une minuscule pizzeria délicieuse cachée juste à côté du Sacré choeur !"
+    }, {
+        "stars": 3,
+        "comment": "J'ai trouvé ça correct, sans plus"
+    }]
+}, {
+    "restaurantName": "Croc-Loup",
+    "address": "35 Rue du Loup, 33000 Bordeaux",
+    "lat": 44.837995,
+    "long": -0.573152,
+    "ratings": [{
+        "stars": 5,
+        "comment": "Une minuscule pizzeria délicieuse cachée juste à côté du Sacré choeur !"
+    }, {
+        "stars": 3,
+        "comment": "J'ai trouvé ça correct, sans plus"
+    }]
+}, {
+    "restaurantName": "Le Pavillon des Boulevards",
+    "address": "120 Rue de la Croix-de-Seguey, 33000 Bordeaux",
+    "lat": 44.853096,
+    "long": -0.592902,
+    "ratings": [{
+        "stars": 2,
+        "comment": "Une minuscule pizzeria délicieuse cachée juste à côté du Sacré choeur !"
+    }, {
+        "stars": 3,
+        "comment": "J'ai trouvé ça correct, sans plus"
+    }]
+}, {
+    "restaurantName": "Le Glouton",
+    "address": "15 Rue des Frères Bonie, 33000 Bordeaux",
+    "lat": 44.836984,
+    "long": -0.579729,
+    "ratings": [{
+        "stars": 1,
+        "comment": "Une minuscule pizzeria délicieuse cachée juste à côté du Sacré choeur !"
+    }, {
+        "stars": 2,
+        "comment": "J'ai trouvé ça correct, sans plus"
+    }]
+}, {
+    "restaurantName": "L'Entrecôte",
+    "address": "4 Cours du 30 Juillet, 33000 Bordeaux",
+    "lat": 44.843268,
+    "long": -0.574187,
+    "ratings": [{
+        "stars": 5,
+        "comment": "Une minuscule pizzeria délicieuse cachée juste à côté du Sacré choeur !"
+    }, {
+        "stars": 5,
+        "comment": "J'ai trouvé ça correct, sans plus"
+    }]
+}, {
+    "restaurantName": "Tante Charlotte",
+    "address": "7 rue des Bahutiers 33000 Bordeaux",
+    "lat": 44.8395674,
+    "long": -0.5705894999999828,
+    "ratings": [{
+        "stars": 5,
+        "comment": "Une minuscule pizzeria délicieuse cachée juste à côté du Sacré choeur !"
+    }, {
+        "stars": 5,
+        "comment": "J'ai trouvé ça correct, sans plus"
+    }]
+}]

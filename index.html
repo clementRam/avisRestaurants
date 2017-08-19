@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Avis de restaurants</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel='stylesheet' href='css/style.css'>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand scroll" href="#sect1"><i class="fa fa-cutlery fa-lg" aria-hidden="true"></i>  AVIS DE RESTAURANT</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="#sect2" class='scroll'></a>
+                        </li>
+                        <li>
+                            <a href="#sect3" class='scroll'></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </header>
+    <section id="sect1">
+        <div class='container'>
+            <div class="col-lg-8 col-lg-offset-2">
+                <form method='post' action='yelp.php' class="input-group search-div">
+                    <span class="input-group-addon input-group-addon-left" id="basic-addon2"><i class="fa fa-search" aria-hidden="true"></i></span>
+                    <input type="text" id='valSearch' name="recherche" class="form-control search-bar" placeholder='Ma position' aria-describedby="basic-addon2">
+                    <span class="input-group-addon input-group-addon-right " id="basic-addon2"><button id="searchButton" type="submit" class="scroll" href="#sect2">Trouver un restaurant</button></span>
+                </form>
+            </div>
+        </div>
+        <div class="arrow animated bounce pointer">
+            <a class="scroll" href="#sect2"><img width="40" height="40" alt="" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0yOTMuNzUxLDQ1NS44NjhjLTIwLjE4MSwyMC4xNzktNTMuMTY1LDE5LjkxMy03My42NzMtMC41OTVsMCwwYy0yMC41MDgtMjAuNTA4LTIwLjc3My01My40OTMtMC41OTQtNzMuNjcyDQoJbDE4OS45OTktMTkwYzIwLjE3OC0yMC4xNzgsNTMuMTY0LTE5LjkxMyw3My42NzIsMC41OTVsMCwwYzIwLjUwOCwyMC41MDksMjAuNzcyLDUzLjQ5MiwwLjU5NSw3My42NzFMMjkzLjc1MSw0NTUuODY4eiIvPg0KPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTIyMC4yNDksNDU1Ljg2OGMyMC4xOCwyMC4xNzksNTMuMTY0LDE5LjkxMyw3My42NzItMC41OTVsMCwwYzIwLjUwOS0yMC41MDgsMjAuNzc0LTUzLjQ5MywwLjU5Ni03My42NzINCglsLTE5MC0xOTBjLTIwLjE3OC0yMC4xNzgtNTMuMTY0LTE5LjkxMy03My42NzEsMC41OTVsMCwwYy0yMC41MDgsMjAuNTA5LTIwLjc3Miw1My40OTItMC41OTUsNzMuNjcxTDIyMC4yNDksNDU1Ljg2OHoiLz4NCjwvc3ZnPg0K"
+                /></a>
+        </div>
+    </section>
+    <section id="sect2" class="map-content">
+        <div class='row map-content'>
+            <!-- map -->
+            <div class='map-content col-lg-6 col-lg-offset-1'>
+                <div id="map"></div>
+                <div class="alert alert-info" role="alert"><i class="fa fa-info-circle" aria-hidden="true"></i> Clic droit sur la carte à l'endroit souhaité pour ajouter un nouveau reastaurant.
+                </div>
+            </div>
+            <!-- filtre étoile -->
+            <div class="col-lg-4 white resto-content" id='slide1'>
+                <div class="radioNote">
+                    <label for="radio" class="control-label label-filtre col-lg-12">Filtre note min :</label>
+                    <div class="filtre-star">
+                        <fieldset id="outil-filtre-star" class="rating col-lg-12">
+                            <input class="note-filtre" type="radio" id="star5" name="rating" value="5" /><label class="full" for="star5" title="5 stars"></label>
+                            <input class="note-filtre" type="radio" id="star4" name="rating" value="4" /><label class="full" for="star4" title="4 stars"></label>
+                            <input class="note-filtre" type="radio" id="star3" name="rating" value="3" /><label class="full" for="star3" title="3 stars"></label>
+                            <input class="note-filtre" type="radio" id="star2" name="rating" value="2" /><label class="full" for="star2" title="2 stars"></label>
+                            <input class="note-filtre" type="radio" id="star1" name="rating" value="1" /><label class="full" for="star1" title="1 star" checked="checked"></label>
+                        </fieldset>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <!-- slider pour filtre note
+                    <div class='row'>
+                        <div class='col-lg-6' id='slider'></div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-lg-6 center resultFiltre'>
+                            <p>De <span id='noteMin'>1</span> à <span id='noteMax'>5</span></p>
+                        </div>
+                    </div>-->
+                <div id="resto-liste">
+                </div>
+            </div>
+            <!-- div affichée une fois restaurant cliqué -->
+            <div class="col-lg-4 white resto-comment" id="slide2">
+                <i class="fa fa-times fa-2x pointer" id="back" aria-hidden="true"></i>
+                <h2 class='resto-bar'><span id="resto-nom"></span><span class='moyNote' id='stars'></span></h2>
+                <div id="imgStreetView"></div>
+                <div id="addComment"></div>
+                <div id="comments"></div>
+
+                <!-- dialog ajout commentaire -->
+                <div id="addComments" title="Ajouter un commentaire">
+                    <a href="#" class="close"></a>
+                    <form class="form-group">
+                        <div class="radioNote">
+                            <label for="rating" class="control-label col-lg-12">Note</label>
+                            <fieldset class="rating">
+                                <input class="note" type="radio" id="star5" name="rating" value="5" /><label class="full" for="star5" title="5 stars"></label>
+                                <input class="note" type="radio" id="star4" name="rating" value="4" /><label class="full" for="star4" title="stars"></label>
+                                <input class="note" type="radio" id="star3" name="rating" value="3" /><label class="full" for="star3" title="stars"></label>
+                                <input class="note" type="radio" id="star2" name="rating" value="2" /><label class="full" for="star2" title="2 stars"></label>
+                                <input class="note" type="radio" id="star1" name="rating" value="1" /><label class="full" for="star1" title="1 star"></label>
+                            </fieldset>
+                        </div>
+                        <label for="comment" class="control-label col-lg-12">Commentaire</label>
+                        <textarea id="comment" class="form-control" rows="5" id="comment"></textarea>
+                        <button type="button" id="validComment" class='btn btn-warning btnComment'>Valider</button>
+                    </form>
+                </div>
+            </div>
+    </section>
+    <!-- dailog ajout restaurant -->
+    <div id='ajoutResto' class='row addRest'>
+        <div class='container'>
+            <div class='col-lg-12'>
+                <h2>Ajouter un restaurant</h2>
+                <form class='form-horizontal'>
+                    <div class="form-group">
+                        <label for="nomResto" class="col-sm-2 control-label">Nom</label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="nomResto" placeholder="" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="address" class="col-sm-2 control-label">Adresse</label>
+                        <div class="col-sm-3">
+                            <textarea id='address' class="form-control" rows="3" required></textarea>
+                        </div>
+                    </div>
+                    <input type="button" id='submit' class='btn btn-success col-lg-offset-2' value='Envoyer'>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p class="center">Clément Ramondou | 2017</p>
+    </footer>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <!--<script type='text/javascript' src="js/oauth.min.js"></script>-->
+    <script type='text/javascript' src=json/restaurants.json></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKBidVqCVGBn8WYVU_xS4I5Yp7oQ2igyw"></script>
+    <script type='text/javascript' src=js/function.js></script>
+    <script type='text/javascript' src=js/script.js></script>
+</body>
+
+</html>
