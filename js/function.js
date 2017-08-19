@@ -144,7 +144,6 @@ function initMap(data) {
             infowindowOpen = this.infowindow;
         });
     }
-    12
     map.addListener('rightclick', function(event) {
         newMarker = new google.maps.Marker({
             map: map,
