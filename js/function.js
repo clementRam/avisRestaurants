@@ -123,7 +123,7 @@ function initMap(data) {
             'Error: The Geolocation service failed.' :
             'Error: Your browser doesn\'t support geolocation.');
     }
-    test
+
     for (var i = 0; i < data.length; i++) {
         var myLatlng = new google.maps.LatLng(data[i].lat, data[i].long);
         var marker = new google.maps.Marker({
