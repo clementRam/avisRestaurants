@@ -306,7 +306,6 @@ function displayRestofiltre(min, data) {
         }
     }
 }
-tes dit
 //affiche la street view et tous les commentaires du restaurant 
 function displayComments(id) {
     $("#comments, #addComment, #resto-nom, #imgStreetView, #stars").empty();
