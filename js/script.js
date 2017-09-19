@@ -293,7 +293,7 @@ function displayAllResto(data) {
         });
     }
 }
-
+test
 //affiche les restaurants selon le filtre note 
 function displayRestofiltre(min, data) {
     for (var i = 0; i < data.length; i++) {
