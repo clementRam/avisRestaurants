@@ -1,6 +1,8 @@
 <?php
 $lat = $_POST["lat"];
 $long = $_POST["long"];
+$tokenType = $_POST["tokenType"];
+$accessToken = $_POST["accessToken"];
 $url = "https://api.yelp.com/v3/businesses/search?latitude=".$lat."&longitude=".$long."&limit=10";
 $curl = curl_init();
 
@@ -13,7 +15,7 @@ curl_setopt_array($curl, array(
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "GET",
   CURLOPT_HTTPHEADER => array(
-    "authorization: Bearer 2WTQgmFRRaQnC_vw0zsfe5PtCbYWr2A31njW2Aeh_T5WonghOjdSrmhne--AhQlWlkZnf5arGsx1vWRWgetVNvRlfvEO6mKsRx8ad-FJawv3we04Y_3oDw_sRJcsWXYx",
+    "authorization:" . $tokenType . " " . $accessToken,
     "cache-control: no-cache",
     "postman-token: c0d73575-d294-510e-32ab-97181ea7ba3a"
   ),

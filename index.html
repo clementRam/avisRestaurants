@@ -100,28 +100,29 @@
                 <div id="imgStreetView"></div>
                 <div id="addComment"></div>
                 <div id="comments"></div>
-
-                <!-- dialog ajout commentaire -->
-                <div id="addComments" title="Ajouter un commentaire">
-                    <a href="#" class="close"></a>
-                    <form class="form-group">
-                        <div class="radioNote">
-                            <label for="rating" class="control-label col-lg-12">Note</label>
-                            <fieldset class="rating">
-                                <input class="note" type="radio" id="star5" name="rating" value="5" /><label class="full" for="star5" title="5 stars"></label>
-                                <input class="note" type="radio" id="star4" name="rating" value="4" /><label class="full" for="star4" title="stars"></label>
-                                <input class="note" type="radio" id="star3" name="rating" value="3" /><label class="full" for="star3" title="stars"></label>
-                                <input class="note" type="radio" id="star2" name="rating" value="2" /><label class="full" for="star2" title="2 stars"></label>
-                                <input class="note" type="radio" id="star1" name="rating" value="1" /><label class="full" for="star1" title="1 star"></label>
-                            </fieldset>
-                        </div>
-                        <label for="comment" class="control-label col-lg-12">Commentaire</label>
-                        <textarea id="comment" class="form-control" rows="5" id="comment"></textarea>
-                        <button type="button" id="validComment" class='btn btn-warning btnComment'>Valider</button>
-                    </form>
-                </div>
             </div>
     </section>
+    <!-- dialog ajout commentaire -->
+    <div id="addComments" title="Ajouter un commentaire">
+        <a href="#" class="close"></a>
+        <form class="form-group">
+            <div class="radioNewNote">
+                <label for="radio" class="control-label col-lg-12">Note</label>
+                <div class="filtre-star">
+                    <fieldset id="outil-new-star" class="ratingNewComment col-lg-12">
+                        <input class="note" type="radio" id="newCommentstar5" name="rating" value="5" /><label class="full" for="newCommentstar5" title="5 stars"></label>
+                        <input class="note" type="radio" id="newCommentstar4" name="rating" value="4" /><label class="full" for="newCommentstar4" title="4 stars"></label>
+                        <input class="note" type="radio" id="newCommentstar3" name="rating" value="3" /><label class="full" for="newCommentstar3" title="3 stars"></label>
+                        <input class="note" type="radio" id="newCommentstar2" name="rating" value="2" /><label class="full" for="newCommentstar2" title="2 stars"></label>
+                        <input class="note" type="radio" id="newCommentstar1" name="rating" value="1" /><label class="full" for="newCommentstar1" title="1 star" checked="checked"></label>
+                    </fieldset>
+                </div>
+            </div>
+            <label for="comment" class="control-label col-lg-12">Commentaire</label>
+            <textarea id="comment" class="form-control" rows="5" id="comment"></textarea>
+            <button type="button" id="validComment" class='btn btn-warning btnComment'>Valider</button>
+        </form>
+    </div>
     <!-- dailog ajout restaurant -->
     <div id='ajoutResto' class='row addRest'>
         <div class='container'>
@@ -154,7 +155,7 @@
     <!--<script type='text/javascript' src="js/oauth.min.js"></script>-->
     <script type='text/javascript' src=json/restaurants.json></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKBidVqCVGBn8WYVU_xS4I5Yp7oQ2igyw"></script>
-    <script type='text/javascript' src=js/function.js></script>
+    <!-- <script type='text/javascript' src=js/function.js></script> -->
     <script type='text/javascript' src=js/script.js></script>
 </body>
 

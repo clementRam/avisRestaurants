@@ -408,8 +408,6 @@ label {
     float: right;
 }
 
-#resto:hover {}
-
 
 /***** CSS Magic to Highlight Stars on Hover *****/
 
@@ -440,6 +438,9 @@ label {
 .rating>input:checked~label:hover~label {
     color: #FFED85;
 }
+
+
+/* effet bounce fleche défiler vers le bas */
 
 .arrow {
     position: absolute;
