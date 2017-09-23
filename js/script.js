@@ -223,7 +223,7 @@ function moyenneStars(data) {
 
 //update stars
 function updateStars(i, data){
-    data[i].moyenneStars = ''
+    data[i].moyStars = ''
     for(var j = 0; j < data[i].moyenne; j++){
         data[i].moyStars += '<i class="fa fa-star" aria-hidden="true"></i>';
     }
@@ -232,10 +232,9 @@ function updateStars(i, data){
 //affiche, met à jour la note moyenne 
 function displayMoyenne(i) {
     $('#moyNote').empty();
-    for (var k = 0; k < data[i].moyenne; k++) {
-        $('#moyNote' + i).append('<i class="fa fa-star" aria-hidden="true"></i>');
-    }
+    $('#moyNote').append(data[i].moyStars);
 }
+
 
 //restos visibles stockés un array selon la localisation
 function restoArray(latUser, longUser) {
@@ -399,7 +398,9 @@ $(function() {
         updateMoyenne(id, data);
         updateStars(id, data);
         displayMoyenne(id);
-        $(this )
+        $('#' + id + ' .infoResto .moyNote').empty();
+        $('#' + id + ' .infoResto .moyNote').append(data[id].moyStars);
+        console.log(data[id].satrs);
     });
 
     //filtre outil étoile
