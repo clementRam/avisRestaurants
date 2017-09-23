@@ -59,7 +59,6 @@ function getYelp() {
 function getRestoYelp() {
     $.post("yelp.php", { accessToken: yelpToken.access_token, tokenType: yelpToken.token_type, lat: loc.latitude, long: loc.longitude }).done(function(donnees) {
         dYelp = JSON.parse(donnees);
-        console.log(dYelp);
         for (var i = 0; i < dYelp.businesses.length; i++) {
             var restoYelp = {
                 restaurantName: dYelp.businesses[i].name + "<img src='img/yelp_icon.png' class='logo-yelp'>",
@@ -67,11 +66,11 @@ function getRestoYelp() {
                 lat: dYelp.businesses[i].coordinates.latitude,
                 long: dYelp.businesses[i].coordinates.longitude,
                 moyenne: [dYelp.businesses[i].rating],
-                streetView: "<img src=" + dYelp.businesses[i].image_url + ">"
+                streetView: "<img src=" + dYelp.businesses[i].image_url + ">",
+                ratings: []
             };
             data.push(restoYelp);
         }
-        console.log(data);
         initMap(data);
         moyenneStars(data);
         displayAllResto(data);
@@ -91,7 +90,7 @@ function init() {
     data = [];
     getYelp();
     reqJson();
-    calcAllMoyenne(data);
+    initMoyenne(data);
     moyenneStars(data);
     initMap(data);
     imgStreetView(data);
@@ -107,26 +106,6 @@ function initMap(data) {
         zoom: 14
     });
     geocoder = new google.maps.Geocoder();
-
-    // Try HTML5 geolocation.
-    /* if (navigator.geolocation && $('#searchVal').val() !== '') {
-         navigator.geolocation.getCurrentPosition(function(position) {
-                 pos = {
-                     lat: position.coords.latitude,
-                     lng: position.coords.longitude
-                 };
-                 infoWindow.setPosition(pos);
-                 infoWindow.setContent('Vous êtes ici.');
-                 map.setCenter(pos);
-                 restoArray(pos.lat, pos.lng);
-             },
-             function() {
-                 handleLocationError(true, infoWindow, map.getCenter());
-             });
-     } else {
-         // Browser doesn't support Geolocation
-         handleLocationError(false, infoWindow, map.getCenter());
-     }*/
 
     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
@@ -211,8 +190,9 @@ function imgStreetView(data) {
         data[i].streetView = '<img src="https://maps.googleapis.com/maps/api/streetview?size=400x400&location=' + data[i].lat + ',' + data[i].long + '&fov=90&heading=235&pitch=10&key=AIzaSyCwzVIYdUufu8mhPO3gmsj97hMENK06Kow">';
     }
 }
-//Calcul de toutes les moyennes
-function calcAllMoyenne(data) {
+
+//Calcul de toutes les moyennes de data[]
+function initMoyenne(data) {
     for (var i = 0; i < data.length; i++) {
         var total = 0;
         for (var j = 0; j < data[i].ratings.length; j++) {
@@ -223,7 +203,7 @@ function calcAllMoyenne(data) {
 }
 
 //Calcul moyenne
-function calcMoyenne(i, data) {
+function updateMoyenne(i, data) {
     var total = 0;
     for (var j = 0; j < data[i].ratings.length; j++) {
         total += data[i].ratings[j].stars;
@@ -241,9 +221,17 @@ function moyenneStars(data) {
     }
 }
 
+//update stars
+function updateStars(i, data){
+    data[i].moyenneStars = ''
+    for(var j = 0; j < data[i].moyenne; j++){
+        data[i].moyStars += '<i class="fa fa-star" aria-hidden="true"></i>';
+    }
+}
+
 //affiche, met à jour la note moyenne 
 function displayMoyenne(i) {
-    $('#moyNote' + i).empty();
+    $('#moyNote').empty();
     for (var k = 0; k < data[i].moyenne; k++) {
         $('#moyNote' + i).append('<i class="fa fa-star" aria-hidden="true"></i>');
     }
@@ -314,7 +302,6 @@ function displayComments(id) {
     $("#stars").append(data[id].moyStars);
     displayMoyenne(id);
     $("#addComment").append("<a href='#sect3'>Ajouter un commentaire</a>");
-    console.log(data[id].ratings)
     if (data[id].ratings) {
         for (var l = 0; l < data[id].ratings.length; l++) {
             $('#comments').append('<p id="com' + l + '" class="moyNote"></p><p>' + data[id].ratings[l].comment + '</p><br>');
@@ -409,26 +396,11 @@ $(function() {
         data[id].ratings.push({ stars, comment });
         $("#addComments").dialog('close');
         displayComments(id);
-        calcMoyenne(id);
+        updateMoyenne(id, data);
+        updateStars(id, data);
         displayMoyenne(id);
+        $(this )
     });
-
-    /*filtre outil slide
-    $("#slider").slider({
-        id: "sliderNote",
-        min: 1,
-        max: 5,
-        range: true,
-        values: [1, 5],
-        change: function(event, ui) {
-            filtreNote = $("#slider").slider("values");
-            $("#noteMin").empty();
-            $("#noteMax").empty();
-            $("#noteMin").append(filtreNote[0]);
-            $("#noteMax").append(filtreNote[1]);
-            displayRestofiltre(filtreNote[0], filtreNote[1]);
-        }
-    });*/
 
     //filtre outil étoile
     $("#outil-filtre-star").click(function() {
