@@ -324,7 +324,6 @@ function displayComments(id) {
             }
         }
     }
-
 }
 
 //insere les données du formulaire pour la création d'un nouveau restaurant
