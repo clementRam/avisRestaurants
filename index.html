@@ -17,7 +17,8 @@
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                        aria-expanded="false">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -61,7 +62,8 @@
             <!-- map -->
             <div class='map-content col-lg-6 col-lg-offset-1'>
                 <div id="map"></div>
-                <div class="alert alert-info" role="alert"><i class="fa fa-info-circle" aria-hidden="true"></i> Clic droit sur la carte à l'endroit souhaité pour ajouter un nouveau reastaurant.
+                <div class="alert alert-info" role="alert"><i class="fa fa-info-circle" aria-hidden="true"></i> Clic droit sur la carte à l'endroit souhaité pour ajouter
+                    un nouveau reastaurant.
                 </div>
             </div>
             <!-- filtre étoile -->
@@ -70,11 +72,16 @@
                     <label for="radio" class="control-label label-filtre col-lg-12">Filtre note min :</label>
                     <div class="filtre-star">
                         <fieldset id="outil-filtre-star" class="rating col-lg-12">
-                            <input class="note-filtre" type="radio" id="star5" name="rating" value="5" /><label class="full" for="star5" title="5 stars"></label>
-                            <input class="note-filtre" type="radio" id="star4" name="rating" value="4" /><label class="full" for="star4" title="4 stars"></label>
-                            <input class="note-filtre" type="radio" id="star3" name="rating" value="3" /><label class="full" for="star3" title="3 stars"></label>
-                            <input class="note-filtre" type="radio" id="star2" name="rating" value="2" /><label class="full" for="star2" title="2 stars"></label>
-                            <input class="note-filtre" type="radio" id="star1" name="rating" value="1" /><label class="full" for="star1" title="1 star" checked="checked"></label>
+                            <input class="note-filtre" type="radio" id="star5" name="rating" value="5" /><label class="full"
+                                for="star5" title="5 stars"></label>
+                            <input class="note-filtre" type="radio" id="star4" name="rating" value="4" /><label class="full"
+                                for="star4" title="4 stars"></label>
+                            <input class="note-filtre" type="radio" id="star3" name="rating" value="3" /><label class="full"
+                                for="star3" title="3 stars"></label>
+                            <input class="note-filtre" type="radio" id="star2" name="rating" value="2" /><label class="full"
+                                for="star2" title="2 stars"></label>
+                            <input class="note-filtre" type="radio" id="star1" name="rating" value="1" /><label class="full"
+                                for="star1" title="1 star" checked="checked"></label>
                         </fieldset>
                     </div>
                 </div>
@@ -102,6 +109,7 @@
                 <div id="comments"></div>
             </div>
     </section>
+
     <!-- dialog ajout commentaire -->
     <div id="addComments" title="Ajouter un commentaire">
         <a href="#" class="close"></a>
@@ -110,11 +118,16 @@
                 <label for="radio" class="control-label col-lg-12">Note</label>
                 <div class="filtre-star">
                     <fieldset id="outil-new-star" class="rating col-lg-12">
-                        <input class="note" type="radio" id="newCommentstar5" name="rating" value="5" /><label class="full" for="newCommentstar5" title="5 stars"></label>
-                        <input class="note" type="radio" id="newCommentstar4" name="rating" value="4" /><label class="full" for="newCommentstar4" title="4 stars"></label>
-                        <input class="note" type="radio" id="newCommentstar3" name="rating" value="3" /><label class="full" for="newCommentstar3" title="3 stars"></label>
-                        <input class="note" type="radio" id="newCommentstar2" name="rating" value="2" /><label class="full" for="newCommentstar2" title="2 stars"></label>
-                        <input class="note" type="radio" id="newCommentstar1" name="rating" value="1" /><label class="full" for="newCommentstar1" title="1 star" checked="checked"></label>
+                        <input class="note" type="radio" id="newCommentstar5" name="rating" value="5" /><label class="full"
+                            for="newCommentstar5" title="5 stars"></label>
+                        <input class="note" type="radio" id="newCommentstar4" name="rating" value="4" /><label class="full"
+                            for="newCommentstar4" title="4 stars"></label>
+                        <input class="note" type="radio" id="newCommentstar3" name="rating" value="3" /><label class="full"
+                            for="newCommentstar3" title="3 stars"></label>
+                        <input class="note" type="radio" id="newCommentstar2" name="rating" value="2" /><label class="full"
+                            for="newCommentstar2" title="2 stars"></label>
+                        <input class="note" type="radio" id="newCommentstar1" name="rating" value="1" /><label class="full"
+                            for="newCommentstar1" title="1 star" checked="checked"></label>
                     </fieldset>
                 </div>
             </div>
@@ -123,34 +136,30 @@
             <button type="button" id="validComment" class='btn btn-warning btnComment'>Valider</button>
         </form>
     </div>
+
     <!-- dailog ajout restaurant -->
-    <div id='ajoutResto' class='row addRest'>
-        <div class='container'>
-            <div class='col-lg-12'>
-                <h2>Ajouter un restaurant</h2>
-                <form class='form-horizontal'>
-                    <div class="form-group">
-                        <label for="nomResto" class="col-sm-2 control-label">Nom</label>
-                        <div class="col-sm-3">
-                            <input type="text" class="form-control" id="nomResto" placeholder="" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="address" class="col-sm-2 control-label">Adresse</label>
-                        <div class="col-sm-3">
-                            <textarea id='address' class="form-control" rows="3" required></textarea>
-                        </div>
-                    </div>
-                    <input type="button" id='submit' class='btn btn-success col-lg-offset-2' value='Envoyer'>
-                </form>
+    <div id='addRestDialog' title='Ajouter un restaurant' class='row addRest'>
+        <a href="#" class="close"></a>
+        <form class="form-group">
+            <label for="nomResto" class="col-sm-12 control-label">Nom</label>
+            <div class="col-sm-12">
+                <input type="text" class="form-control" id="restName" placeholder="" required>
             </div>
-        </div>
+            <!-- <div class="form-group">
+            <label for="address" class="col-sm-2 control-label">Adresse</label>
+            <div class="col-sm-3">
+                <textarea id='address' class="form-control" rows="3" required></textarea>
+            </div>
+        </div> -->
+            <button type="button" id='btnAddRest' class='btn btn-success'>Valider</button>
+        </form>
     </div>
     <footer>
         <p class="center">Clément Ramondou | 2017</p>
     </footer>
     <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+        crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <!--<script type='text/javascript' src="js/oauth.min.js"></script>-->
     <script type='text/javascript' src=json/restaurants.json></script>

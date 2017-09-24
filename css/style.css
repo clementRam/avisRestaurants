@@ -226,6 +226,10 @@ footer {
     margin: 20px 40%;
 }
 
+#btnAddRest {
+    margin: 40px 40% 10px;
+}
+
 .btnFiltre {
     margin-left: 20px;
 }

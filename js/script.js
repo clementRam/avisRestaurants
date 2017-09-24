@@ -140,7 +140,7 @@ function initMap(data) {
             position: new google.maps.LatLng(event.latLng.lat(), event.latLng.lng()),
             label: (data.length + 1).toString()
         });
-        $("#ajoutResto").dialog('open');
+        $("#addRestDialog").dialog('open');
     });
 }
 //restos visibles stockés dans restoliste selon les notes
@@ -223,7 +223,7 @@ function moyenneStars(data) {
 
 //update stars
 function updateStars(i, data){
-    data[i].moyStars = ''
+    data[i].moyStars = '';
     for(var j = 0; j < data[i].moyenne; j++){
         data[i].moyStars += '<i class="fa fa-star" aria-hidden="true"></i>';
     }
@@ -271,6 +271,9 @@ function displayAllResto(data) {
             if (infowindowOpen !== 0) {
                 infowindowOpen.close();
             }
+            if(data[id].marker.infoWindow == 'undefined'){
+                
+            }
             data[id].marker.infowindow.open(map, data[id].marker);
             infowindowOpen = data[id].marker.infowindow;
             event.preventDefault();
@@ -314,18 +317,25 @@ function displayComments(id) {
 
 //insere les données du formulaire pour la création d'un nouveau restaurant
 function newResto() {
-    var name = document.getElementById("nomResto").value;
-    var adress = document.getElementById("address").value;
+    var name = document.getElementById("restName").value;
+    // var adress = document.getElementById("address").value;
     var newResto = {
         restaurantName: name,
-        address: adress,
+        address: '',
+        lat: newMarker.position.lat(),
+        long: newMarker.position.lng(),
         marker: newMarker,
         streetView: '<img src="https://maps.googleapis.com/maps/api/streetview?size=400x400&location=' + newMarker.position.lat() + ',' + newMarker.position.lng() + '&fov=90&heading=235&pitch=10&key=AIzaSyCwzVIYdUufu8mhPO3gmsj97hMENK06Kow">',
-        label: data.length
+        label: data.length,
+        moyenne: 3,
+        ratings: []
     };
     data.push(newResto);
-    document.getElementById("ajoutResto").dialog("close");
-    displayAllResto();
+    var i = data.length - 1;
+    updateStars(i, data);
+    $("#addRestDialog").dialog("close");
+    initMap(data);
+    displayAllResto(data);
 }
 
 $(function() {
@@ -373,7 +383,7 @@ $(function() {
     });
 
     //dialog ajout de restaurant
-    $("#ajoutResto").dialog({
+    $("#addRestDialog").dialog({
         autoOpen: false,
         closeText: "X",
         show: "clip",
@@ -382,7 +392,7 @@ $(function() {
         width: 500,
         open: function() {
             $(".ui-widget-overlay").click(function() {
-                $("#ajoutResto").dialog('close');
+                $("#addRestDialog").dialog('close');
             });
         }
     });
@@ -419,11 +429,15 @@ $(function() {
     });
 
     //insertion du nouveau resto après validation du formulaire 
-    $("#submit").click(function() {
+    $("#btnAddRest").click(function() {
         newResto();
     });
     $("#back").click(function() {
         $("#slide2").hide();
         $("#slide1").toggle("slide", { direction: 'left' });
     });
+    $(document).click(function(){
+        console.log(data[10]);
+        console.log(data[10].marker.position.lat());
+    })
 });
