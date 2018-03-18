@@ -38,7 +38,13 @@ function success(pos) {
 }
 
 function error(err) {
-    console.warn('ERROR' + err.code + ':' + err.message);
+    console.warn('ERROR ' + err.code + ':' + err.message);
+    alert("Erreur géolocalisation: " + err.message + ". Position par défaut: Bordeaux");
+    loc.latitude = 44.8404400;
+    loc.longitude = -0.5805000;
+    userLoc.latitude = 44.8404400;
+    userLoc.longitude = -0.5805000;
+    init();
 }
 navigator.geolocation.getCurrentPosition(success, error, options);
 
@@ -48,13 +54,15 @@ $.getJSON('json/restaurants.json', function(d) {
     allResto = d;
 });
 
+
 //Token yelp API
-function getYelp() {
-    $.post("yelpToken.php").done(function(response) {
-        yelpToken = JSON.parse(response);
-        getRestoYelp();
-    });
-}
+// function getYelp() {
+//     $.post("yelpToken.php").done(function(response) {
+//         yelpToken = JSON.parse(response);
+//         getRestoYelp();
+//     });
+// }
+
 //requete sur l'api yelp pour stocker les données dans data 
 function getRestoYelp() {
     $.post("yelp.php", { accessToken: yelpToken.access_token, tokenType: yelpToken.token_type, lat: loc.latitude, long: loc.longitude }).done(function(donnees) {
@@ -88,7 +96,8 @@ function reqJson() {
 // fonction principale 
 function init() {
     data = [];
-    getYelp();
+    // getYelp();
+    getRestoYelp();
     reqJson();
     initMoyenne(data);
     moyenneStars(data);
@@ -158,7 +167,7 @@ function restoArray(min, max) {
 function codeAddress() {
     var address = document.getElementById('valSearch').value;
     geocoder.geocode({ 'address': address }, function(results, status) {
-        if (status == 'OK') {
+        if (status === 'OK') {
             map.setCenter(results[0].geometry.location);
             loc.latitude = results[0].geometry.location.lat();
             loc.longitude = results[0].geometry.location.lng();
@@ -410,7 +419,6 @@ $(function() {
         displayMoyenne(id);
         $('#' + id + ' .infoResto .moyNote').empty();
         $('#' + id + ' .infoResto .moyNote').append(data[id].moyStars);
-        console.log(data[id].satrs);
     });
 
     //filtre outil étoile
@@ -436,8 +444,4 @@ $(function() {
         $("#slide2").hide();
         $("#slide1").toggle("slide", { direction: 'left' });
     });
-    $(document).click(function(){
-        console.log(data[10]);
-        console.log(data[10].marker.position.lat());
-    })
 });
