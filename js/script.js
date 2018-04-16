@@ -268,7 +268,16 @@ function displayAllResto(data) {
         $('#resto-liste').append('<br><p>Aucun restaurant trouvé</p>');
     } else {
         for (var j = 0; j < data.length; j++) {
-            $('#resto-liste').append('<div class="resto pointer" id="' + j + '"><div class="infoResto"><span class="labelLi">' + data[j].marker.label + '</span><span class="lienResto"><b> ' + data[j].restaurantName + '</b></span><span class="moyNote">' + data[j].moyStars + '</span><p>' + data[j].address + '</p></div></div>');
+            $('#resto-liste').append(
+                '<div class="resto pointer" id="' + j + '">' +
+                    '<div class="infoResto">' +
+                        '<span class="labelLi">' + data[j].marker.label + '</span>' +
+                        '<span class="lienResto"><b> ' + data[j].restaurantName + '</b></span>' +
+                        '<span class="moyNote">' + data[j].moyStars + '</span>' +
+                        '<p>' + data[j].address + '</p>' +
+                    '</div>' +
+                '</div>'
+            );
         }
         //effet slide sur la liste des restaurants 
         $("#slide2").hide();
@@ -280,9 +289,9 @@ function displayAllResto(data) {
             if (infowindowOpen !== 0) {
                 infowindowOpen.close();
             }
-            if(data[id].marker.infoWindow == 'undefined'){
-                
-            }
+            // if(data[id].marker.infoWindow == 'undefined'){
+            //
+            // }
             data[id].marker.infowindow.open(map, data[id].marker);
             infowindowOpen = data[id].marker.infowindow;
             event.preventDefault();
@@ -295,7 +304,7 @@ function displayAllResto(data) {
 //affiche les restaurants selon le filtre note 
 function displayRestofiltre(min, data) {
     for (var i = 0; i < data.length; i++) {
-        if (data[i].moyenne < min) {
+        if (Math.ceil(data[i].moyenne) < min) {
             $("#" + i).hide();
             data[i].marker.setVisible(false);
         }
@@ -315,7 +324,11 @@ function displayComments(id) {
     $("#addComment").append("<a href='#sect3'>Ajouter un commentaire</a>");
     if (data[id].ratings) {
         for (var l = 0; l < data[id].ratings.length; l++) {
-            $('#comments').append('<p id="com' + l + '" class="moyNote"></p><p>' + data[id].ratings[l].comment + '</p><br>');
+            $('#comments').append(
+                '<p id="com' + l + '" class="moyNote"></p>' +
+                '<p>' + data[id].ratings[l].comment + '</p>' +
+                '<br>'
+            );
             //Nombre d'étoiles pour chaque commentaire 
             for (var m = 0; m < data[id].ratings[l].stars; m++) {
                 $("#com" + l).append('<i class="fa fa-star" aria-hidden="true"></i>');
